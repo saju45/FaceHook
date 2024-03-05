@@ -514,6 +514,14 @@
       "avatar": "uploads/avatar/avatar-1708802845791-219561000.png",
       "email": "rambo@email.com",
       "bio": "I am Rambo!!!"
+    },
+    {
+      "id": "71df763c-92a6-46ea-8331-e401eafcba79",
+      "password": "$2b$08$2O6CE.l8yrxoGOrGHtgs1eJ63Evxag1./x1QinvHg9m35/Gze86dK",
+      "firstName": "shanawaj hossain",
+      "lastName": "saju",
+      "avatar": null,
+      "email": "saju@gmai.com"
     }
   ]
 }
