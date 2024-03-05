@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useReducer } from "react";
 import { ProfileContext } from "../context";
 import { initialState, profileReducer } from "../reducers/ProfileReducer";
