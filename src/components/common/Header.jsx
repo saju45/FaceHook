@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HomeIcon from "../../assets/icons/home.svg";
 import Notification from "../../assets/icons/notification.svg";
 import Logo from "../../assets/images/logo.svg";
@@ -7,9 +7,13 @@ import { useProfile } from "../../hooks/useProfile";
 import Logout from "../auth/Logout";
 
 const Header = () => {
+  const navigate = useNavigate();
   const { auth } = useAuth();
   const { state } = useProfile();
   const user = state?.user ?? auth?.user;
+  const userAvatar = user?.avatar
+    ? `${import.meta.env.VITE_SERVER_BASE_URL}/${user.avatar}`
+    : "https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png";
   return (
     <nav className="sticky top-0 z-50 border-b border-[#3F3F3F] bg-[#1E1F24] py-4">
       <div className="container flex flex-col items-center justify-between gap-6 sm:flex-row">
@@ -35,8 +39,9 @@ const Header = () => {
               {user?.firstName} {user?.lastName}
             </span>
             <img
+              onClick={() => navigate("/me")}
               className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
-              src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user.avatar}`}
+              src={userAvatar}
               alt=""
             />
           </button>
